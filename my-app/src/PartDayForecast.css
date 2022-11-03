@@ -1,0 +1,14 @@
+.PartDayForecast {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+
+.PartDayForecast .part {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 15px;
+  text-transform: capitalize;
+}

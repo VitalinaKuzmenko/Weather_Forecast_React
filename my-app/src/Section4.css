@@ -1,0 +1,8 @@
+.small_horizontal_line {
+  border-bottom: 0.5px solid white;
+  padding-top: 5px;
+  margin-bottom: 5px;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}

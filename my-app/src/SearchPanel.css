@@ -1,0 +1,28 @@
+.SearchPanel .textarea {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  border: 0;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+.SearchPanel button {
+  height: 40px;
+  width: 120px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: 300;
+  background-color: white;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.SearchPanel button:hover {
+  background-color: rgba(11, 2, 49, 0.568);
+  color: white;
+}

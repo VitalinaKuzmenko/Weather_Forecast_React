@@ -1,0 +1,8 @@
+.Section1 {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  width: 100%;
+  margin-bottom: 30px;
+}

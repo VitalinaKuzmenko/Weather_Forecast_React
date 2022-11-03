@@ -1,0 +1,7 @@
+.background {
+  background-image: linear-gradient(rgba(12, 3, 51, 0.4), rgba(12, 3, 51, 0.4)),
+    url("https://previews.dropbox.com/p/thumb/ABqu-LqZ9LMmDm4wC3LGByByHCMaXXXxSKVgXD4fgjV6UMinBkObzmu7dmICk0vafBw_445uTR5cBjodv4zBeT4TMeOavLxlWxOOLZIFTWfV0E8aXKHp2eldA3ORIqaIYFav3InapTGWx9609lVOTbGaRRf-8yZ8F_MHF3F_D4YBoAcWGgIlZ_DZfUbYxIFhuHyb0IZhYuCMxnWcMxPCBoxdBid02ulTcbA5rPl69wkGveaq994p3f9H6WBpZEQgrqr68h3-ajae7CsEVD8ensJ2VjJhltIe368wibgFlRYdNkb5l4nr_Fs8aOW9v815JHvEnLh8U26V7cN3GHL1r7Zz2XYW3Z7jJ3_nsLh_JniQm_K_MczZPpv5Z9hy2nY-ciI/p.jpeg");
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}

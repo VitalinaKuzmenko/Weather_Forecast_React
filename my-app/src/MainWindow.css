@@ -1,0 +1,16 @@
+.MainWindow {
+  background-color: rgba(108, 103, 129, 0.5);
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  width: 45%;
+  border-radius: 5px;
+  padding: 4%;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 200;
+}

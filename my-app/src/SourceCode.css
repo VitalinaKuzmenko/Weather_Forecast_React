@@ -1,0 +1,10 @@
+.SourceCode {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.SourceCode .source-code-text {
+  color: white;
+  font-size: 20px;
+  font-family: "Barlow Condensed", sans-serif;
+}

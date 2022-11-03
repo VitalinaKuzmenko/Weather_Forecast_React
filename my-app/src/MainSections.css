@@ -1,0 +1,26 @@
+.MainSections .vertical_line {
+  border-right: 2px solid white;
+  padding-left: 20px;
+  margin-right: 20px;
+}
+
+.MainSections .horizontal_line {
+  border-bottom: 2px solid white;
+  padding-top: 15px;
+  margin-bottom: 15px;
+}
+
+.MainSections .big_icon {
+  width: 125%;
+  height: auto;
+}
+
+.MainSections .medium_icon {
+  width: 115%;
+  height: auto;
+}
+
+.MainSections .small_icon {
+  width: 70px;
+  height: auto;
+}

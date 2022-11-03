@@ -1,0 +1,58 @@
+.Section2 .temperature_text {
+  font-size: 70px;
+  font-weight: 500;
+  display: flex;
+  align-self: center;
+}
+
+.Section2 p {
+  margin: 0;
+}
+
+.temp-unit {
+  font-size: 30px;
+  margin-top: 18px;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.active {
+  color: white;
+  text-decoration: none;
+  cursor: default;
+}
+
+.active:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.non-active {
+  color: grey;
+  text-decoration: none;
+}
+
+.non-active:hover {
+  color: #302785;
+  text-decoration: underline;
+}
+
+.Section2 .weather_text {
+  font-size: 30px;
+  font-weight: 300;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.Section2 .part {
+  font-size: 18px;
+}
+
+.Section2 .part span {
+  padding-left: 5px;
+}
+
+.Section2 .the_smallest_icon {
+  width: 40%;
+  height: auto;
+}

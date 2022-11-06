@@ -26,14 +26,3 @@ export default function MainSections() {
     </div>
   );
 }
-
-{
-  /* <div className="col-5">
-<Section2 />
-</div>
-<div className="col-1 d-none d-lg-block vertical_line"></div>
-<div className="col d-lg-none horizontal_line"></div>
-<div className="col-5">
-<Section3 />
-</div> */
-}

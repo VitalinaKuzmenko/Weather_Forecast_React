@@ -1,18 +1,20 @@
 import React from "react";
 import "./Section3.css";
 import PartDayForecast from "./PartDayForecast";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 export default function Section3() {
   return (
     <div className="Section3">
-      <div className="row">
-        <div className="col-6">
+      <Row>
+        <Col xxl="6">
           <PartDayForecast time="Daytime" />
-        </div>
-        <div className="col-6">
+        </Col>
+        <Col xxl="6">
           <PartDayForecast time="Nightime" />
-        </div>
-      </div>
+        </Col>
+      </Row>
     </div>
   );
 }

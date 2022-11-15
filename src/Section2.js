@@ -7,7 +7,7 @@ export default function Section2() {
   return (
     <div className="Section2">
       <Row>
-        <Col lg="7" className="d-flex align-items-center">
+        <Col lg="7">
           <p className="temperature_text">
             <span id="temperature">15</span>
             <a href="#0" className="temp-unit active" id="celsius-link">

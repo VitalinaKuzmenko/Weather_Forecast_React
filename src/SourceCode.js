@@ -8,7 +8,7 @@ export default function SourceCode() {
         <a
           target="_blank"
           rel="noreferrer"
-          href="https://github.com/VitalinaKuzmenko/Weather-forecast.git"
+          href="https://github.com/VitalinaKuzmenko/Weather_Forecast_React"
         >
           Open-source code
         </a>

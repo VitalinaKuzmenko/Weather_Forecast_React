@@ -15,13 +15,12 @@ export default function SearchPanel() {
           />
         </div>
 
-          <button className="mb-1" type="button" id="submit-button">
-            Search
-          </button>
-          <button type="button" id="current-place-button">
-            Current place
-          </button>
-        </div>
+        <button className="mb-1" type="button" id="submit-button">
+          Search
+        </button>
+        <button type="button" id="current-place-button">
+          Current place
+        </button>
       </div>
     </div>
   );

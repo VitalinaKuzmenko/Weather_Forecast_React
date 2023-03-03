@@ -2,6 +2,9 @@ import React from "react";
 import "./Section4.css";
 import DayForecast from "./DayForecast";
 
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+
 export default function Section4() {
   return (
     <div className="Section4">

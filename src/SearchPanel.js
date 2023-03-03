@@ -14,7 +14,7 @@ export default function SearchPanel() {
             id="input"
           />
         </div>
-        <div className="col-lg-3">
+
           <button className="mb-1" type="button" id="submit-button">
             Search
           </button>

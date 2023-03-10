@@ -7,6 +7,7 @@ export default function App() {
   useEffect(() => {
     document.body.classList.add("background");
   }, []);
+
   return (
     <div className="App">
       <MainWindow />

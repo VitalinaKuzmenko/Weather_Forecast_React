@@ -1,11 +1,11 @@
 import React from "react";
 import "./Titles.css";
 
-export default function Titles() {
+export default function Titles({ weather }) {
   return (
     <div className="Titles">
       <h2 className="title_0" id="city">
-        London
+        {weather.city}
       </h2>
       <h2 className="title_1">
         Last update: <span id="time">22:26</span>

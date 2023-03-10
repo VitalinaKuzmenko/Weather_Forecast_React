@@ -20,7 +20,7 @@ export default function SearchPanel({ setCity, search }) {
               onChange={(event) => setCity(event.target.value)}
             />
           </div>
-          <button className="mb-1" type="button" onClick={handleSubmit}>
+          <button className="mb-1" type="submit">
             Search
           </button>
           <button type="button">Current place</button>

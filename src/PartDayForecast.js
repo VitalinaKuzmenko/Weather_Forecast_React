@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./PartDayForecast.css";
 import axios from "axios";
 
@@ -13,8 +13,9 @@ export default function PartDayForecast({ time, weather }) {
 
   const searchByHour = () => {
     const apiKey = "ce8a5720a4218dbb8ae301a6c1f4ec3e";
-    const apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${weather.coordinates.lat}&lon=${weather.coordinates.lon}&units=metric&appid=${apiKey}`;
+    const apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${weather.coordinates.lat}&lon=${weather.coordinates.lon}&units=metric&appid=${apiKey}`;
     axios.get(apiURL).then(handleResponse);
+    console.log("search by hour was called");
   };
 
   const handleResponse = (response) => {
@@ -39,9 +40,14 @@ export default function PartDayForecast({ time, weather }) {
       if (hour === num) {
         setHourlyDescription(hourlyWeather.hours24[i].weather[0].description);
         setPicture(hourlyWeather.hours24[i].weather[0].icon);
+        console.log(picture, " picture");
       }
     }
   };
+
+  useEffect(() => {
+    searchByHour();
+  }, [time, weather]);
 
   return (
     <div className="PartDayForecast">
@@ -54,12 +60,12 @@ export default function PartDayForecast({ time, weather }) {
           <span className="unit">°C</span>
         </p>
 
-        <img
+        {/* <img
           className="medium_icon"
           id="day_icon"
           src={require(`./media/${picture}.png`)}
           alt="Sunny"
-        />
+        /> */}
         <p id="day-description">{hourlyDescription}</p>
       </div>
     </div>

@@ -33,6 +33,7 @@ export default function MainWindow() {
 
   //saving data from API inside setWeather object
   const handleResponse = (response) => {
+    console.log(response.data);
     setWeather({
       ready: true,
       city: response.data.name,
@@ -42,6 +43,7 @@ export default function MainWindow() {
       description: response.data.weather[0].main,
       date: new Date(response.data.dt * 1000),
       coordinates: response.data.coord,
+      picture: response.data.weather[0].icon,
     });
   };
 

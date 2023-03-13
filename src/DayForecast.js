@@ -8,8 +8,8 @@ export default function DayForecast({ dayForecast }) {
         <p>{dayForecast.day}</p>
         <img
           className="small_icon"
-          src={require("./media/04d.png")}
-          alt="Sunny"
+          src={require(`./media/${dayForecast.picture}.png`)}
+          alt={dayForecast.description}
         />
         <div className="row">
           <div className="col">

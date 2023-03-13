@@ -20,7 +20,7 @@ export default function Section2({ weather }) {
         <div className="col-lg-5">
           <img
             className="big_icon"
-            src={require("./media/03d.png")}
+            src={require(`./media/${weather.picture}.png`)}
             alt="Clouds"
           />
         </div>

@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SearchPanel.css";
 
 export default function SearchPanel({ setCity, search }) {
+  const [searchCity, setSearchCity] = useState("");
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    search();
+    setCity(searchCity);
   };
 
   return (
@@ -17,7 +19,7 @@ export default function SearchPanel({ setCity, search }) {
               className="textarea"
               placeholder="Enter a city..."
               id="input"
-              onChange={(event) => setCity(event.target.value)}
+              onChange={(event) => setSearchCity(event.target.value)}
             />
           </div>
           <button className="mb-1" type="submit">

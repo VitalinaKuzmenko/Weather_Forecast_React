@@ -4,12 +4,8 @@ import axios from "axios";
 
 export default function PartDayForecast({ time, weather }) {
   const [hourlyWeather, setHourlyWeather] = useState({});
-  // const [dayDescription, setDayDescription] = useState("");
-  // const [nightDescription, setNightDescription] = useState("");
-  // const [dayPicture, setDayPicture] = useState("");
-  // const [nightPicture, setNightPicture] = useState("");
-  const [hourlyDescription, setHourlyDescription] = useState("");
-  const [picture, setPicture] = useState("");
+  const [hourlyDescription, setHourlyDescription] = useState("Rain");
+  const [picture, setPicture] = useState(`13d`);
 
   const searchByHour = () => {
     const apiKey = "ce8a5720a4218dbb8ae301a6c1f4ec3e";
@@ -19,53 +15,65 @@ export default function PartDayForecast({ time, weather }) {
   };
 
   const handleResponse = (response) => {
-    console.log("here");
+    console.log("partdayforecast");
     console.log(response.data);
-    setHourlyWeather({
-      dayTimeTemperature: Math.round(response.data.daily[0].temp.day),
-      nightTimeTemperature: Math.round(response.data.daily[0].temp.night),
-      hours24: response.data.hourly,
-    });
+    const { data } = response;
+    if (data && data.daily && data.daily[0] && data.hourly) {
+      setHourlyWeather({
+        dayTimeTemperature: Math.round(data.daily[0].temp.day),
+        nightTimeTemperature: Math.round(data.daily[0].temp.night),
+        hours24: data.hourly,
+      });
+    }
 
-    time === "Daytime"
-      ? changePictureAndDescription(12)
-      : changePictureAndDescription(3);
+    console.log("inside handle response");
   };
 
   //changing picture and description
   const changePictureAndDescription = (num) => {
-    for (var i = 0; i < 24; i++) {
-      let date = new Date(hourlyWeather.hours24[i].dt * 1000);
-      let hour = date.getHours();
-      if (hour === num) {
-        setHourlyDescription(hourlyWeather.hours24[i].weather[0].description);
-        setPicture(hourlyWeather.hours24[i].weather[0].icon);
-        console.log(picture, " picture");
+    if (hourlyWeather !== undefined && hourlyWeather.hours24 !== undefined) {
+      for (var i = 0; i < 24; i++) {
+        let date = new Date(hourlyWeather.hours24[i].dt * 1000);
+        let hour = date.getHours();
+        if (hour === num) {
+          setHourlyDescription(hourlyWeather.hours24[i].weather[0].description);
+          setPicture(hourlyWeather.hours24[i].weather[0].icon);
+          console.log(picture, " picture");
+        }
       }
     }
   };
 
+  //if time or weather (and location) is changing we need to update info for daytime or nightime
   useEffect(() => {
     searchByHour();
-  }, [time, weather]);
+    console.log("calll first function search by hour");
+  }, []);
+
+  //checking if we have already data with hours and then updating info
+  useEffect(() => {
+    if (hourlyWeather.hours24 !== undefined) {
+      time === "Daytime"
+        ? changePictureAndDescription(12)
+        : changePictureAndDescription(3);
+    }
+    console.log("inside use effect - changing descrtiption and a picture");
+  }, [hourlyWeather, time]);
 
   return (
     <div className="PartDayForecast">
       <div className="part">
         <p>{time}</p>
         <p>
-          <span id="day_temperature">
-            {setHourlyWeather.dayTimeTemperature}
-          </span>
+          <span id="day_temperature">{hourlyWeather.dayTimeTemperature}</span>
           <span className="unit">°C</span>
         </p>
 
-        {/* <img
+        <img
           className="medium_icon"
-          id="day_icon"
           src={require(`./media/${picture}.png`)}
-          alt="Sunny"
-        /> */}
+          alt={hourlyDescription}
+        />
         <p id="day-description">{hourlyDescription}</p>
       </div>
     </div>

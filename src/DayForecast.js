@@ -1,11 +1,11 @@
 import React from "react";
 import "./DayForecast.css";
 
-export default function DayForecast(props) {
+export default function DayForecast({ dayForecast }) {
   return (
     <div className="DayForecast">
       <div className="day">
-        <p>{props.day}</p>
+        <p>{dayForecast.day}</p>
         <img
           className="small_icon"
           src={require("./media/04d.png")}
@@ -13,11 +13,11 @@ export default function DayForecast(props) {
         />
         <div className="row">
           <div className="col">
-            <span id="max-temperature">25</span>
+            <span id="max-temperature">{dayForecast.maxTemp}</span>
             <span className="unit">°C</span>
           </div>
           <div className="col">
-            <span id="min-temperature">15</span>
+            <span id="min-temperature">{dayForecast.minTemp}</span>
             <span className="unit">°C</span>
           </div>
         </div>

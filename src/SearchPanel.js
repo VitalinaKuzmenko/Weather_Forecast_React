@@ -4,12 +4,14 @@ import "./SearchPanel.css";
 export default function SearchPanel({ setCity, searchCurrentLocation }) {
   const [searchCity, setSearchCity] = useState("");
 
+  //when submit form, search for city
   const handleSubmit = (event) => {
     event.preventDefault();
     setCity(searchCity);
     setSearchCity("");
   };
 
+  //geting position of current location and passing it to the main window
   const handleCurrentLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {

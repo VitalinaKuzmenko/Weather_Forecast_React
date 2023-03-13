@@ -1,12 +1,24 @@
 import React, { useState } from "react";
 import "./SearchPanel.css";
 
-export default function SearchPanel({ setCity, search }) {
+export default function SearchPanel({ setCity, searchCurrentLocation }) {
   const [searchCity, setSearchCity] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setCity(searchCity);
+  };
+
+  const handleCurrentLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        searchCurrentLocation(lat, lon);
+      });
+    } else {
+      alert("Geolocation is not supported by this browser");
+    }
   };
 
   return (
@@ -25,7 +37,9 @@ export default function SearchPanel({ setCity, search }) {
           <button className="mb-1" type="submit">
             Search
           </button>
-          <button type="button">Current place</button>
+          <button type="button" onClick={handleCurrentLocation}>
+            Current place
+          </button>
         </div>
       </form>
     </div>

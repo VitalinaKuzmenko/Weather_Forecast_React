@@ -10,6 +10,12 @@ export default function MainWindow() {
   const [city, setCity] = useState("New York");
   const [weather, setWeather] = useState({ ready: false });
 
+  const searchCurrentLocation = (lat, lon) => {
+    const apiKey = "ce8a5720a4218dbb8ae301a6c1f4ec3e";
+    const apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    axios.get(apiURL).then(handleResponse);
+  };
+
   //getting data from API
   const search = () => {
     const apiKey = "ce8a5720a4218dbb8ae301a6c1f4ec3e";
@@ -44,7 +50,12 @@ export default function MainWindow() {
     <>
       {weather.ready ? (
         <div className="MainWindow">
-          <Section1 setCity={setCity} weather={weather} search={search} />
+          <Section1
+            setCity={setCity}
+            weather={weather}
+            search={search}
+            searchCurrentLocation={searchCurrentLocation}
+          />
           <MainSections weather={weather} />
           <Section4 weather={weather} />
         </div>

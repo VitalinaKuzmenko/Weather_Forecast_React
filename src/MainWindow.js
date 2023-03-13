@@ -10,6 +10,7 @@ export default function MainWindow() {
   const [city, setCity] = useState("New York");
   const [weather, setWeather] = useState({ ready: false });
 
+  //getting data from API when the currentLocation button was clicked
   const searchCurrentLocation = (lat, lon) => {
     const apiKey = "ce8a5720a4218dbb8ae301a6c1f4ec3e";
     const apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;

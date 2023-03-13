@@ -7,6 +7,7 @@ export default function SearchPanel({ setCity, searchCurrentLocation }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     setCity(searchCity);
+    setSearchCity("");
   };
 
   const handleCurrentLocation = () => {
@@ -31,6 +32,7 @@ export default function SearchPanel({ setCity, searchCurrentLocation }) {
               className="textarea"
               placeholder="Enter a city..."
               id="input"
+              value={searchCity}
               onChange={(event) => setSearchCity(event.target.value)}
             />
           </div>

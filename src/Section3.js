@@ -2,15 +2,15 @@ import React from "react";
 import "./Section3.css";
 import PartDayForecast from "./PartDayForecast";
 
-export default function Section3({ weather }) {
+export default function Section3({ weather, celsius }) {
   return (
     <div className="Section3">
       <div className="row">
         <div className="col-6">
-          <PartDayForecast time="Daytime" weather={weather} />
+          <PartDayForecast time="Day" weather={weather} celsius={celsius} />
         </div>
         <div className="col-6">
-          <PartDayForecast time="Nightime" weather={weather} />
+          <PartDayForecast time="Night" weather={weather} celsius={celsius} />
         </div>
       </div>
     </div>

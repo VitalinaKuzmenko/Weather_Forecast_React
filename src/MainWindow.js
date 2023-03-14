@@ -10,6 +10,9 @@ export default function MainWindow() {
   const [city, setCity] = useState("New York");
   const [weather, setWeather] = useState({ ready: false });
 
+  //checking celsius or farenheit
+  const [celsius, setCelsius] = useState(true);
+
   //getting data from API when the currentLocation button was clicked
   const searchCurrentLocation = (lat, lon) => {
     const apiKey = "ce8a5720a4218dbb8ae301a6c1f4ec3e";
@@ -36,6 +39,7 @@ export default function MainWindow() {
     console.log(response.data);
     setWeather({
       ready: true,
+      unit: true,
       city: response.data.name,
       temperature: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed),
@@ -59,8 +63,12 @@ export default function MainWindow() {
             search={search}
             searchCurrentLocation={searchCurrentLocation}
           />
-          <MainSections weather={weather} />
-          <Section4 weather={weather} />
+          <MainSections
+            weather={weather}
+            celsius={celsius}
+            setCelsius={setCelsius}
+          />
+          <Section4 weather={weather} celsius={celsius} />
         </div>
       ) : null}
     </>

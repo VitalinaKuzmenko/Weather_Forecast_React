@@ -3,7 +3,7 @@ import "./Section4.css";
 import DayForecast from "./DayForecast";
 import axios from "axios";
 
-export default function Section4({ weather }) {
+export default function Section4({ weather, celsius }) {
   const [dailyData, setDailyData] = useState([]);
   const [dayForecasts, setDayForecasts] = useState([]);
 
@@ -51,13 +51,19 @@ export default function Section4({ weather }) {
           day: formatDay(obj.dt),
           picture: obj.weather[0].icon,
           description: obj.weather[0].description,
-          maxTemp: Math.round(obj.temp.max),
-          minTemp: Math.round(obj.temp.min),
+          maxTemp:
+            celsius === true
+              ? Math.round(obj.temp.max)
+              : Math.round(obj.temp.max * 1.8 + 32),
+          minTemp:
+            celsius === true
+              ? Math.round(obj.temp.min)
+              : Math.round(obj.temp.min * 1.8 + 32),
         };
       });
       setDayForecasts(forecasts);
     }
-  }, [dailyData]);
+  }, [dailyData, celsius]);
 
   return (
     <div className="Section4">
@@ -67,7 +73,7 @@ export default function Section4({ weather }) {
         {dayForecasts.map((dayForecast, index) => {
           return (
             <div className="col-lg-2" key={index + "0"}>
-              <DayForecast dayForecast={dayForecast} />;
+              <DayForecast dayForecast={dayForecast} celsius={celsius} />
             </div>
           );
         })}

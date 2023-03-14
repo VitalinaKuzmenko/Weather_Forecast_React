@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./PartDayForecast.css";
 import axios from "axios";
 
-export default function PartDayForecast({ time, weather }) {
+export default function PartDayForecast({ time, weather, celsius }) {
   const [hourlyWeather, setHourlyWeather] = useState({});
   const [hourlyDescription, setHourlyDescription] = useState("Rain");
   const [picture, setPicture] = useState(`13d`);
   const [temperature, setTemperature] = useState(0);
+  const [unit, setUnit] = useState("°C");
 
   const searchByHour = () => {
     const apiKey = "ce8a5720a4218dbb8ae301a6c1f4ec3e";
@@ -49,18 +50,30 @@ export default function PartDayForecast({ time, weather }) {
     searchByHour();
   }, [time, weather]);
 
-  //checking if we have already data with hours and then updating info
+  //checking if we have already data with hours and which unit we need to show and then updating info
   useEffect(() => {
     if (hourlyWeather.hours24 !== undefined) {
-      if (time === "Daytime") {
+      if (time === "Day" && celsius === true) {
         updatePicAndDescAndTemp(12);
+        setUnit("°C");
         setTemperature(hourlyWeather.dayTimeTemperature);
-      } else {
+      } else if (time === "Day" && celsius === false) {
+        updatePicAndDescAndTemp(12);
+        setUnit("°F");
+        setTemperature(Math.round(hourlyWeather.dayTimeTemperature * 1.8 + 32));
+      } else if (time === "Night" && celsius === true) {
         updatePicAndDescAndTemp(3);
+        setUnit("°C");
         setTemperature(hourlyWeather.nightTimeTemperature);
+      } else if (time === "Night" && celsius === false) {
+        updatePicAndDescAndTemp(3);
+        setUnit("°F");
+        setTemperature(
+          Math.round(hourlyWeather.nightTimeTemperature * 1.8 + 32)
+        );
       }
     }
-  }, [hourlyWeather, time]);
+  }, [hourlyWeather, time, celsius]);
 
   return (
     <div className="PartDayForecast">
@@ -68,7 +81,7 @@ export default function PartDayForecast({ time, weather }) {
         <p>{time}</p>
         <p>
           <span id="day_temperature">{temperature}</span>
-          <span className="unit">°C</span>
+          <span className="unit">{unit}</span>
         </p>
 
         <img

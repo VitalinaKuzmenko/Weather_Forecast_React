@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./DayForecast.css";
 
-export default function DayForecast({ dayForecast }) {
+export default function DayForecast({ dayForecast, celsius }) {
+  const [unit, setUnit] = useState("°C");
+
+  //changing the main temperature
+  useEffect(() => {
+    if (celsius === false) {
+      setUnit("°F");
+    } else {
+      setUnit("°C");
+    }
+  }, [celsius]);
+
   return (
     <div className="DayForecast">
       <div className="day">
@@ -14,11 +25,11 @@ export default function DayForecast({ dayForecast }) {
         <div className="row">
           <div className="col">
             <span id="max-temperature">{dayForecast.maxTemp}</span>
-            <span className="unit">°C</span>
+            <span className="unit">{unit}</span>
           </div>
           <div className="col">
             <span id="min-temperature">{dayForecast.minTemp}</span>
-            <span className="unit">°C</span>
+            <span className="unit">{unit}</span>
           </div>
         </div>
       </div>

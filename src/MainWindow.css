@@ -14,3 +14,9 @@
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 200;
 }
+
+@media (max-width: 992px) {
+  .MainWindow {
+    width: 85%;
+  }
+}

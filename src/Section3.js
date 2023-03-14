@@ -6,12 +6,8 @@ export default function Section3({ weather, celsius }) {
   return (
     <div className="Section3">
       <div className="row">
-        <div className="col-6 part">
-          <PartDayForecast time="Day" weather={weather} celsius={celsius} />
-        </div>
-        <div className="col-6 part">
-          <PartDayForecast time="Night" weather={weather} celsius={celsius} />
-        </div>
+        <PartDayForecast time="Day" weather={weather} celsius={celsius} />
+        <PartDayForecast time="Night" weather={weather} celsius={celsius} />
       </div>
     </div>
   );

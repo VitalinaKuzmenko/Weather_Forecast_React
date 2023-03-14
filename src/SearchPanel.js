@@ -38,7 +38,7 @@ export default function SearchPanel({ setCity, searchCurrentLocation }) {
           />
         </div>
         <div className="col-lg-3 center-buttons">
-          <button className="mb-1" type="submit">
+          <button className="mb-1 right-margin" type="submit">
             Search
           </button>
           <button type="button" onClick={handleCurrentLocation}>

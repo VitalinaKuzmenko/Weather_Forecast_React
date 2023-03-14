@@ -61,3 +61,19 @@
 .Section2 .nopadding {
   padding: 0 !important;
 }
+
+@media (max-width: 992px) {
+  .Section2 {
+    text-align: center;
+  }
+
+  .Section2 .temperature_text {
+    display: flex;
+    justify-content: center;
+  }
+
+  .Section2 .the_smallest_icon {
+    width: 50px;
+    height: auto;
+  }
+}

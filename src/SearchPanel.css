@@ -9,6 +9,7 @@
   border: 0;
   border-radius: 4px;
   font-size: 20px;
+  display: inline-block;
 }
 
 .SearchPanel button {
@@ -29,4 +30,17 @@
 .SearchPanel button:hover {
   background-color: rgba(11, 2, 49, 0.568);
   color: white;
+}
+
+@media (max-width: 992px) {
+  .SearchPanel .center-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 40px;
+  }
+
+  .SearchPanel .right-margin {
+    margin-right: 10px;
+  }
 }

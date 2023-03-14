@@ -3,9 +3,10 @@
   justify-content: center;
   align-items: center;
   font-size: 22px;
+  width: 100px;
 }
 
-.PartDayForecast .part {
+.part {
   display: flex;
   flex-direction: column;
   text-align: center;

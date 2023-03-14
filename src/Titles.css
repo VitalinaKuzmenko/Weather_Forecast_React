@@ -16,3 +16,11 @@
   margin-top: -3px;
   margin-bottom: -5px;
 }
+
+@media (max-width: 992px) {
+  .Titles {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+}

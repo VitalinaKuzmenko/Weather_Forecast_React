@@ -76,21 +76,19 @@ export default function PartDayForecast({ time, weather, celsius }) {
   }, [hourlyWeather, time, celsius]);
 
   return (
-    <div className="PartDayForecast">
-      <div className="part">
-        <p>{time}</p>
-        <p>
-          <span id="day_temperature">{temperature}</span>
-          <span className="unit">{unit}</span>
-        </p>
+    <div className="PartDayForecast col-6 part">
+      <p>{time}</p>
+      <p>
+        <span id="day_temperature">{temperature}</span>
+        <span className="unit">{unit}</span>
+      </p>
 
-        <img
-          className="medium_icon"
-          src={require(`./media/${picture}.png`)}
-          alt={hourlyDescription}
-        />
-        <p id="day-description">{hourlyDescription}</p>
-      </div>
+      <img
+        className="medium_icon"
+        src={require(`./media/${picture}.png`)}
+        alt={hourlyDescription}
+      />
+      <p id="day-description">{hourlyDescription}</p>
     </div>
   );
 }

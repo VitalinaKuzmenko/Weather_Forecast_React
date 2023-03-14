@@ -16,8 +16,6 @@ export default function PartDayForecast({ time, weather, celsius }) {
   };
 
   const handleResponse = (response) => {
-    console.log("partdayforecast");
-    console.log(response.data);
     const { data } = response;
     if (data && data.daily && data.daily[0] && data.hourly) {
       const updatedWeather = {

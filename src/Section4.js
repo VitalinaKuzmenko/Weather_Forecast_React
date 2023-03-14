@@ -34,11 +34,7 @@ export default function Section4({ weather, celsius }) {
     const apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${weather.coordinates.lat}&lon=${weather.coordinates.lon}&units=metric&appid=${apiKey}`;
     axios.get(apiURL).then((response) => {
       if (response.data !== undefined) {
-        console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-
         setDailyData(response.data.daily);
-
-        console.log(response.data.daily);
       }
     });
   };

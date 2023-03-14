@@ -30,13 +30,10 @@ export default function MainWindow() {
   //calling search function each time city state will changed
   useEffect(() => {
     search();
-    console.log("inside useEffect");
-    console.log("city is: " + city);
   }, [city]);
 
   //saving data from API inside setWeather object
   const handleResponse = (response) => {
-    console.log(response.data);
     setWeather({
       ready: true,
       unit: true,
@@ -50,8 +47,6 @@ export default function MainWindow() {
       picture: response.data.weather[0].icon,
     });
   };
-
-  console.log(weather);
 
   return (
     <>

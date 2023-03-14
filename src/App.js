@@ -10,8 +10,10 @@ export default function App() {
 
   return (
     <div className="App">
-      <MainWindow />
-      <SourceCode />
+      <div className="container">
+        <MainWindow />
+        <SourceCode />
+      </div>
     </div>
   );
 }

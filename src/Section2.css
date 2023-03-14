@@ -55,4 +55,9 @@
 .Section2 .the_smallest_icon {
   width: 40%;
   height: auto;
+  margin-right: 5px;
+}
+
+.Section2 .nopadding {
+  padding: 0 !important;
 }

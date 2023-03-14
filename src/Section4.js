@@ -74,10 +74,11 @@ export default function Section4({ weather, celsius }) {
           return (
             <div className="col-lg-2" key={index + "0"}>
               <DayForecast dayForecast={dayForecast} celsius={celsius} />
+              <div className="col-lg d-lg-none small_horizontal_line"></div>
             </div>
           );
         })}
-        <div className="col-lg d-lg-none small_horizontal_line"></div>
+
         <div className="col-lg-1"></div>
       </div>
     </div>

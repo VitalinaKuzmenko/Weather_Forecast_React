@@ -25,7 +25,7 @@ export default function Section2({ weather, celsius, setCelsius }) {
   return (
     <div className="Section2">
       <div className="row">
-        <div className="col-lg-7 d-flex align-items-center">
+        <div className="col-lg-7 ">
           <p className="temperature_text">
             <span id="temperature">{temperature}</span>
             <a
@@ -51,7 +51,7 @@ export default function Section2({ weather, celsius, setCelsius }) {
             </a>
           </p>
         </div>
-        <div className="col-lg-5">
+        <div className="col-lg-5 nopadding">
           <img
             className="big_icon"
             src={require(`./media/${weather.picture}.png`)}
@@ -64,7 +64,7 @@ export default function Section2({ weather, celsius, setCelsius }) {
           <p className="weather_text">{weather.description}</p>
         </div>
       </div>
-      <div className="row part">
+      <div className="row">
         <div className="col-lg-6">
           <img
             className="the_smallest_icon"

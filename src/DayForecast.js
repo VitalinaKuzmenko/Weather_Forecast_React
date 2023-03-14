@@ -22,7 +22,7 @@ export default function DayForecast({ dayForecast, celsius }) {
           src={require(`./media/${dayForecast.picture}.png`)}
           alt={dayForecast.description}
         />
-        <div className="row">
+        <div className="row d-flex flex-column">
           <div className="col">
             <span id="max-temperature">{dayForecast.maxTemp}</span>
             <span className="unit">{unit}</span>

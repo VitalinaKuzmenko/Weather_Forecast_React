@@ -7,7 +7,7 @@ export default function MainSections({ weather, celsius, setCelsius }) {
   return (
     <div className="MainSections">
       <div className="row">
-        <div className="col-5">
+        <div className="col-lg-5">
           <Section2
             weather={weather}
             celsius={celsius}
@@ -16,12 +16,13 @@ export default function MainSections({ weather, celsius, setCelsius }) {
         </div>
         <div className="col-1 d-none d-lg-block vertical_line"></div>
         <div className="col d-lg-none horizontal_line"></div>
-        <div className="col-5">
+        <div className="col-lg-5">
           <Section3 weather={weather} celsius={celsius} />
         </div>
+      </div>
+      <div className="row">
         <div className="col horizontal_line"></div>
       </div>
-      <div className="row"></div>
     </div>
   );
 }

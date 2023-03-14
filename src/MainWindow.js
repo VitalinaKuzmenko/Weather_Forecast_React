@@ -10,7 +10,7 @@ export default function MainWindow() {
   const [city, setCity] = useState("New York");
   const [weather, setWeather] = useState({ ready: false });
 
-  //checking celsius or farenheit
+  //checking celsius or fahrenheit
   const [celsius, setCelsius] = useState(true);
 
   //getting data from API when the currentLocation button was clicked

@@ -25,19 +25,19 @@ export default function SearchPanel({ setCity, searchCurrentLocation }) {
   };
 
   return (
-    <div className="SearchPanel">
-      <form onSubmit={handleSubmit}>
-        <div className="row">
-          <div className="col-lg-9">
-            <input
-              type="text"
-              className="textarea"
-              placeholder="Enter a city..."
-              id="input"
-              value={searchCity}
-              onChange={(event) => setSearchCity(event.target.value)}
-            />
-          </div>
+    <form onSubmit={handleSubmit} className="SearchPanel">
+      <div className="row">
+        <div className="col-lg-9">
+          <input
+            type="text"
+            className="textarea"
+            placeholder="Enter a city..."
+            id="input"
+            value={searchCity}
+            onChange={(event) => setSearchCity(event.target.value)}
+          />
+        </div>
+        <div className="col-lg-3 center-buttons">
           <button className="mb-1" type="submit">
             Search
           </button>
@@ -45,7 +45,7 @@ export default function SearchPanel({ setCity, searchCurrentLocation }) {
             Current place
           </button>
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 }

@@ -1,6 +1,7 @@
 .DayForecast {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   font-size: 20px;
 }
 
@@ -18,8 +19,8 @@
 }
 
 .DayForecast .small_icon {
-  width: 80%;
-  height: 80%;
+  width: 70px;
+  height: auto;
 }
 
 .DayForecast span {

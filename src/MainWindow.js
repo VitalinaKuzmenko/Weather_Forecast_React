@@ -44,7 +44,7 @@ export default function MainWindow() {
       temperature: Math.round(response.data.main.temp),
       wind: Math.round(response.data.wind.speed),
       humidity: Math.round(response.data.main.humidity),
-      description: response.data.weather[0].main,
+      description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
       coordinates: response.data.coord,
       picture: response.data.weather[0].icon,

@@ -22,6 +22,11 @@ export default function Section2({ weather, celsius, setCelsius }) {
     }
   }, [weather, celsius]);
 
+  //if the city is changed - it should show temperature in Celsius
+  useEffect(() => {
+    setCelsius(true);
+  }, [weather.city]);
+
   return (
     <div className="Section2">
       <div className="row">

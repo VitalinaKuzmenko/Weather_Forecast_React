@@ -7,7 +7,7 @@ export default function Section4({ weather, celsius }) {
   const [dailyData, setDailyData] = useState([]);
   const [dayForecasts, setDayForecasts] = useState([]);
 
-  //format miliseconds into day (String)
+  //format milliseconds into day (String)
   const formatDay = (timestamp) => {
     let date = new Date(timestamp * 1000);
     let day = date.getDay();
@@ -26,6 +26,7 @@ export default function Section4({ weather, celsius }) {
   //if weather (and location) is changing we need to update info
   useEffect(() => {
     searchByDay();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [weather]);
 
   //getting data from api

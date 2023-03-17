@@ -20,11 +20,13 @@ export default function Section2({ weather, celsius, setCelsius }) {
     } else {
       setTemperature(weather.temperature);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [weather, celsius]);
 
   //if the city is changed - it should show temperature in Celsius
   useEffect(() => {
     setCelsius(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [weather.city]);
 
   return (

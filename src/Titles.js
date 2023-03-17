@@ -47,6 +47,7 @@ export default function Titles({ weather }) {
   useEffect(() => {
     showCurrentTime();
     showCurrentDate();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [weather]);
 
   return (

@@ -46,6 +46,7 @@ export default function PartDayForecast({ time, weather, celsius }) {
   //if time or weather (and location) is changing we need to update info for daytime or nighttime
   useEffect(() => {
     searchByHour();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [time, weather]);
 
   //checking if we have already data with hours and which unit we need to show and then updating info
@@ -71,6 +72,7 @@ export default function PartDayForecast({ time, weather, celsius }) {
         );
       }
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hourlyWeather, time, celsius]);
 
   return (

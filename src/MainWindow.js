@@ -37,11 +37,6 @@ export default function MainWindow() {
     }
   };
 
-  console.log("the city is: " + city);
-
-  console.log(weather);
-  console.log("inside main window");
-
   //calling search function each time city state will changed
   useEffect(() => {
     search();
